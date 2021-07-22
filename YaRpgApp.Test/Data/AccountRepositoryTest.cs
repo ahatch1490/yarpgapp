@@ -2,7 +2,6 @@ using System;
 using Xunit;
 using YaRpgApp.Data;
 using YaRpgApp.Data.Account;
-using LiteDB;
 namespace YaRpgApp.Test.Data
 {
     public class AccountRepositoryTest
@@ -11,7 +10,6 @@ namespace YaRpgApp.Test.Data
         private readonly IDbContext _dbContext;
         public AccountRepositoryTest()
         {
-            _dbContext = new DbLiteContext(new LiteDatabase(_dbString));
         }
         [Fact]
         public void ShouldBeAbleToReturnProfileById()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Marten;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using YaRpgApp.Web.Models;
@@ -12,10 +13,11 @@ namespace YaRpgApp.Web.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IDocumentStore _store;
+        public HomeController(ILogger<HomeController> logger, IDocumentStore store)
         {
             _logger = logger;
+            _store = store;
         }
 
         public IActionResult Index()

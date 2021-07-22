@@ -7,15 +7,33 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
-    </ItemGroup>
-
-    <ItemGroup>
+        <PackageReference Include="Markdig" Version="0.25.0" />
+        <PackageReference Include="Marten" Version="4.0.0-rc.3" />
         <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.3" />
         <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.3" />
         <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.3" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.3" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="Client\package.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="wwwroot\css" />
+      <Folder Include="wwwroot\js" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="Client\src\css\site.css">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Include="Client\src\js\site.js">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>
